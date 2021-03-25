@@ -10,7 +10,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 public class MybatisPlus2Application {
-///111
     public static void main(String[] args) {
         SpringApplication.run(MybatisPlus2Application.class, args);
     }
