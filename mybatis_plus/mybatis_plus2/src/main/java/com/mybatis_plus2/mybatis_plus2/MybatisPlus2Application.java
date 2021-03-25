@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 public class MybatisPlus2Application {
-//这是测试
+//这是测试222222
     public static void main(String[] args) {
         SpringApplication.run(MybatisPlus2Application.class, args);
     }
