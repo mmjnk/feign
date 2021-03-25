@@ -1,0 +1,12 @@
+eureka:
+  client:
+    #  注意！这里注册中心地址,要把服务注册到注册中心
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  #本服务的端口号
+server:
+  port: 8082
+spring:
+  #本服务的注册到注册中心的别名
+  application:
+    name: service-order

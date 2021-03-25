@@ -1,0 +1,16 @@
+#端口号
+server:
+  port: 8888
+#eureka配置
+eureka:
+  instance:
+    #注册中心ip地址
+    hostname: localhost
+  client:
+    #是否注册到eureka
+    registerWithEureka: false
+    #是否检测服务信息
+    fetchRegistry: false
+    #注册地址
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
