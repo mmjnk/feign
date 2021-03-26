@@ -12,8 +12,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class MybatisPlus2Application {
     public static void main(String[] args) {
         SpringApplication.run(MybatisPlus2Application.class, args);
-        int a=1;
-        int b=2;
     }
 
 }
