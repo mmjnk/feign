@@ -2,10 +2,10 @@ package com.mybatis_plus2.mybatis_plus2.base.ok;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/User")
@@ -13,9 +13,22 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/getUserById")
-    public User getUserById(@RequestBody User user) {
-        return userService.getUserById(user.getId());
+    @Resource
+    private RedisTemplate redisTemplate;
+
+    @PostMapping("/getUserById/{id}")
+    public User getUserById(@RequestBody @PathVariable("id") Integer id) {
+
+        User u = (User) redisTemplate.opsForValue().get(id);
+        if (u == null) {
+            System.out.println("从数据库查询");
+            u = userService.getUserById(id);
+            redisTemplate.opsForValue().set(u.getId(), u);
+        } else {
+            System.out.println("从缓存查询");
+
+        }
+        return u;
     }
 
     @PostMapping("/getUserByName")

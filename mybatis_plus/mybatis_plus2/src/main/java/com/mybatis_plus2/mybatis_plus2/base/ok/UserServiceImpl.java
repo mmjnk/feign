@@ -15,10 +15,6 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
 
     @Override
     public boolean updateUser(User user) {
-//        User u=new User();
-//        u.setId(user.getId());
-//        u.setName(user.getName());
-//        return  updateById(u);
         EntityWrapper<User> wrapper = new EntityWrapper<>();
         wrapper.eq("id", user.getId());
         return update(user, wrapper);
