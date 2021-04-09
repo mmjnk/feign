@@ -1,9 +1,9 @@
 package com.mybatis_plus2.mybatis_plus2.base.ok;
 
 public enum Color {
-    RED(0,"黑色"),
-    BLUE(1,"黑色"),
-    GREEN(2,"黑色");
+    RED(0,"绿色"),
+    BLUE(1,"红色"),
+    GREEN(2,"蓝色");
 
     private int code;
 private String desc;
