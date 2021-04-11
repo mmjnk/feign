@@ -1,7 +1,7 @@
 package com.mybatis_plus2.mybatis_plus2.base.ok;
 
 public enum Color {
-    WHITE(0,"白BC色");
+    WHITE(0,"白BB色");
 
 
     private int code;
